@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:usere_id] = @user.id
+      session[:user_id] = @user.id
       flash[:success] = "Welcome to the Alpha blog #{@user.username}"
       redirect_to user_path(@user)
     else
